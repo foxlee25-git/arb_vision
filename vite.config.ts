@@ -5,20 +5,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   define: {
-    // 兼容代码中的 process.env 使用
-    'process.env': {}
+    'process.env': process.env
   },
-  server: {
-    port: 3000,
-    host: true
-  },
+  base: '/',
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        main: './index.html'
-      }
-    }
+    assetsDir: 'assets',
+    sourcemap: false,
+    minify: 'esbuild'
   }
 });

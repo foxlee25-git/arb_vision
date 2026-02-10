@@ -8,8 +8,7 @@ export const STORAGE_KEYS = {
   LAST_SYNC: 'arbvision_last_sync'
 };
 
-// 建议在部署平台的 Environment Variables 中设置 VITE_ODDS_API_KEY
-// 如果没有设置，则使用默认的这个（方便你直接测试）
+// 优先尝试获取 Vercel 中设置的环境变量
 export const ODDS_API_KEY = (process.env.VITE_ODDS_API_KEY) || '9215827bcac57a6b09049472d4810d3e';
 
 export const SPORT_MAP: Record<string, string> = {
